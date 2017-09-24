@@ -73,15 +73,6 @@ alter table "App"
     maxextents unlimited
   );
 
-insert into "App"
-values (1, 'SampleApp', 'Sample App', 'TEST1', '样例部门1', 'apollo', 'apollo@acme.com', 0, 'default', to_date('11-09-2017 15:36:47', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:47', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "App"
-values (2, 'system111', 'FIT_AGENT-WEB', 'TEST2', '样例部门2', 'apollo', 'apollo@acme.com', 0, 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:25:29', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "App"
-values (3, '201709121725', 'FIT_ALU-WEB', 'TEST2', '样例部门2', 'apollo', 'apollo@acme.com', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
 
 
 -- Create table
@@ -157,18 +148,6 @@ alter table "AppNamespace"
     minextents 1
     maxextents unlimited
   );
-
-insert into "AppNamespace" 
-values (1, 'application', 'SampleApp', 'properties', 0, 'default app namespace', 0, null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "AppNamespace" 
-values (2, 'application', 'system111', 'properties', 0, 'default app namespace', 0, 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "AppNamespace" 
-values (3, 'application', '201709121725', 'properties', 0, 'default app namespace', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "AppNamespace" 
-values (4, 'TEST2.CAB2B', '201709121725', 'properties', 1, null, 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
 
 
 
@@ -502,9 +481,6 @@ alter table "Favorite"
     maxextents unlimited
   );
   
-insert into "Favorite" 
-values (1, 'apollo', 'system111', 10000, 0, 'apollo', to_date('12-09-2017 16:42:52', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 16:42:52', 'dd-mm-yyyy hh24:mi:ss'));
-
 
 
 -- Create table
@@ -567,57 +543,6 @@ alter table "Permission"
     maxextents unlimited
   );
 
-insert into "Permission" 
-values (1, 'CreateCluster', 'SampleApp', 0, null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (2, 'CreateNamespace', 'SampleApp', 0, null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (3, 'AssignRole', 'SampleApp', 0, null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (4, 'ModifyNamespace', 'SampleApp+application', 0, null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (5, 'ReleaseNamespace', 'SampleApp+application', 0, null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (6, 'CreateCluster', 'system111', 0, 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (7, 'CreateNamespace', 'system111', 0, 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (8, 'AssignRole', 'system111', 0, 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (9, 'ModifyNamespace', 'system111+application', 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (10, 'ReleaseNamespace', 'system111+application', 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (11, 'CreateCluster', '201709121725', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (12, 'CreateNamespace', '201709121725', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (13, 'AssignRole', '201709121725', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (14, 'ModifyNamespace', '201709121725+application', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (15, 'ReleaseNamespace', '201709121725+application', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (16, 'ModifyNamespace', '201709121725+TEST2.CAB2B', 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Permission" 
-values (17, 'ReleaseNamespace', '201709121725+TEST2.CAB2B', 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));  
-
 
 -- Create table
 create table "Role"
@@ -678,39 +603,6 @@ alter table "Role"
     maxextents unlimited
   );
 
-
-insert into "Role" 
-values (1, 'Master+SampleApp', 0, 'default', to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Role" 
-values (2, 'ModifyNamespace+SampleApp+application', 0, 'default', to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Role" 
-values (3, 'ReleaseNamespace+SampleApp+application', 0, 'default', to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:48', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Role" 
-values (4, 'Master+system111', 0, 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Role" 
-values (5, 'ModifyNamespace+system111+application', 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Role" 
-values (6, 'ReleaseNamespace+system111+application', 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Role" 
-values (7, 'Master+201709121725', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Role" 
-values (8, 'ModifyNamespace+201709121725+application', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Role" 
-values (9, 'ReleaseNamespace+201709121725+application', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Role" 
-values (10, 'ModifyNamespace+201709121725+TEST2.CAB2B', 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Role" 
-values (11, 'ReleaseNamespace+201709121725+TEST2.CAB2B', 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
 
 
 -- Create table
@@ -784,56 +676,6 @@ alter table "RolePermission"
     maxextents unlimited
   );
 
-insert into "RolePermission" 
-values (1, 1, 1, 0, null, to_date('11-09-2017 15:36:49', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:49', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (2, 1, 2, 0, null, to_date('11-09-2017 15:36:49', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:49', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (3, 1, 3, 0, null, to_date('11-09-2017 15:36:49', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:49', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (4, 2, 4, 0, null, to_date('11-09-2017 15:36:49', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:49', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (5, 3, 5, 0, null, to_date('11-09-2017 15:36:49', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:49', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (6, 4, 6, 0, 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (7, 4, 7, 0, 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (8, 4, 8, 0, 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (9, 5, 9, 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (10, 6, 10, 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (11, 7, 11, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (12, 7, 12, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (13, 7, 13, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (14, 8, 14, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (15, 9, 15, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (16, 10, 16, 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "RolePermission" 
-values (17, 11, 17, 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
 
 
 -- Create table
@@ -906,40 +748,6 @@ alter table "UserRole"
     minextents 1
     maxextents unlimited
   );
-
-
-insert into "UserRole" 
-values (1, 'apollo', 1, 0, null, to_date('11-09-2017 15:36:50', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:50', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "UserRole" 
-values (2, 'apollo', 2, 0, null, to_date('11-09-2017 15:36:50', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:50', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "UserRole" 
-values (3, 'apollo', 3, 0, null, to_date('11-09-2017 15:36:50', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:50', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "UserRole" 
-values (4, 'apollo', 4, 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "UserRole" 
-values (5, 'apollo', 5, 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "UserRole" 
-values (6, 'apollo', 6, 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "UserRole" 
-values (7, 'apollo', 7, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "UserRole" 
-values (8, 'apollo', 8, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "UserRole" 
-values (9, 'apollo', 9, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "UserRole" 
-values (10, 'apollo', 10, 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "UserRole" 
-values (11, 'apollo', 11, 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
 
 
 

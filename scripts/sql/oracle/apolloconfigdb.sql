@@ -73,15 +73,6 @@ alter table "App"
     maxextents unlimited
   );
 
-insert into "App" 
-values (1, 'SampleApp', 'Sample App', 'TEST1', '样例部门1', 'apollo', 'apollo@acme.com', 0, 'default', to_date('11-09-2017 15:41:26', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:41:26', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "App" 
-values (2, 'system111', 'FIT_AGENT-WEB', 'TEST2', '样例部门2', 'apollo', 'apollo@acme.com', 0, 'apollo', to_date('12-09-2017 12:06:26', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:25:29', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "App" 
-values (3, '201709121725', 'FIT_ALU-WEB', 'TEST2', '样例部门2', 'apollo', 'apollo@acme.com', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
 
 -- Create table
 create table "AppNamespace"
@@ -157,18 +148,6 @@ alter table "AppNamespace"
     maxextents unlimited
   );
   
-insert into "AppNamespace" 
-values (1, 'application', 'SampleApp', 'properties', 0, 'default app namespace', 0, null, to_date('11-09-2017 15:41:27', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:41:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "AppNamespace" 
-values (2, 'application', 'system111', 'properties', 0, 'default app namespace', 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "AppNamespace" 
-values (3, 'application', '201709121725', 'properties', 0, 'default app namespace', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "AppNamespace" 
-values (4, 'TEST2.CAB2B', '201709121725', 'properties', 1, null, 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
-
 
 -- Create table
 create table "Audit"
@@ -221,80 +200,6 @@ alter table "Audit"
     maxextents unlimited
   );
   
-insert into "Audit"  
-values (1, 'App', 2, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (2, 'AppNamespace', 2, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (3, 'Cluster', 2, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (4, 'Namespace', 2, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (5, 'Item', 2, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 12:08:14', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 12:08:14', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (6, 'Release', 2, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 12:08:28', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 12:08:28', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (7, 'ReleaseHistory', 2, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 12:08:28', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 12:08:28', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (8, 'Release', 3, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 16:03:11', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 16:03:11', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (9, 'ReleaseHistory', 3, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 16:03:11', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 16:03:11', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (10, 'App', 2, 'UPDATE', null, 0, 'apollo', to_date('12-09-2017 17:25:29', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:25:29', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (11, 'App', 3, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (12, 'AppNamespace', 3, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (13, 'Cluster', 3, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (14, 'Namespace', 3, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (15, 'Namespace', 4, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (16, 'AppNamespace', 4, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (17, 'Release', 4, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:28:40', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:28:40', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (18, 'ReleaseHistory', 4, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:28:40', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:28:40', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (19, 'Release', 5, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:28:45', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:28:45', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (20, 'ReleaseHistory', 5, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:28:45', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:28:45', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (21, 'Namespace', 4, 'DELETE', null, 0, 'apollo', to_date('12-09-2017 17:29:27', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:29:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (22, 'Namespace', 5, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:29:54', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:29:54', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (23, 'Namespace', 5, 'DELETE', null, 0, 'apollo', to_date('12-09-2017 17:30:18', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:30:18', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (24, 'Namespace', 6, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:30:40', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:30:40', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Audit"  
-values (25, 'Item', 3, 'INSERT', null, 0, 'apollo', to_date('12-09-2017 17:31:36', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('12-09-2017 17:31:36', 'dd-mm-yyyy hh24:mi:ss'));
 
 
 -- Create table
@@ -369,14 +274,6 @@ alter table "Cluster"
     maxextents unlimited
   );
 
-insert into "Cluster"  
-values (1, 'default', 'SampleApp', 0, 0, null, to_date('11-09-2017 15:41:27', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:41:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Cluster"  
-values (2, 'default', 'system111', 0, 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Cluster"  
-values (3, 'default', '201709121725', 0, 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
 
 
 -- Create table
@@ -463,11 +360,6 @@ alter table "Commit"
     minextents 1
     maxextents unlimited
   );
-insert into "Commit" 
-values (1, '{"createItems":[{"namespaceId":2,"key":"SSO_LOGIN_URL","value":"http://10.21.159.41/cab2b/ssologin.action","comment":"单点登录访问地址","lineNum":1,"id":2,"isDeleted":false,"dataChangeCreatedBy":"apollo","dataChangeCreatedTime":"2017-09-12 12:08:13","dataChangeLastModifiedBy":"apollo","dataChangeLastModifiedTime":"2017-09-12 12:08:13"}],"updateItems":[],"deleteItems":[]}', 'system111', 'default', 'application', null, 0, 'apollo', to_date('12-09-2017 12:08:14', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:08:14', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Commit" 
-values (2, '{"createItems":[{"namespaceId":3,"key":"MAX_ONLINE_USER","value":"10","lineNum":1,"id":3,"isDeleted":false,"dataChangeCreatedBy":"apollo","dataChangeCreatedTime":"2017-09-12 17:31:35","dataChangeLastModifiedBy":"apollo","dataChangeLastModifiedTime":"2017-09-12 17:31:35"}],"updateItems":[],"deleteItems":[]}', '201709121725', 'default', 'application', null, 0, 'apollo', to_date('12-09-2017 17:31:36', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:31:36', 'dd-mm-yyyy hh24:mi:ss'));
 
 
 -- Create table
@@ -606,9 +498,6 @@ alter table "Instance"
     maxextents unlimited
   );
 
-insert into "Instance" 
-values (1, 'SampleApp', 'dev', null, '172.26.120.45', to_date('11-09-2017 17:56:14', 'dd-mm-yyyy hh24:mi:ss'), to_date('11-09-2017 17:56:14', 'dd-mm-yyyy hh24:mi:ss'));
-
 
 
 -- Create table
@@ -694,9 +583,6 @@ alter table "InstanceConfig"
     maxextents unlimited
   );
 
-insert into "InstanceConfig" 
-values (1, 1, 'SampleApp', 'default', 'application', '20161009155425-d3a0749c6e20bc15', to_date('11-09-2017 17:56:14', 'dd-mm-yyyy hh24:mi:ss'), to_date('11-09-2017 17:56:14', 'dd-mm-yyyy hh24:mi:ss'), to_date('11-09-2017 17:56:14', 'dd-mm-yyyy hh24:mi:ss'));
-
 
 -- Create table
 create table "Item"
@@ -764,12 +650,6 @@ alter table "Item"
   
 insert into "Item" 
 values (1, 1, 'timeout', '100', 'sample timeout配置', 1, 0, 'default', to_date('11-09-2017 15:41:27', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:41:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Item" 
-values (2, 2, 'SSO_LOGIN_URL', 'http://10.21.159.41/cab2b/ssologin.action', '单点登录访问地址', 1, 0, 'apollo', to_date('12-09-2017 12:08:14', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:08:14', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Item" 
-values (3, 3, 'MAX_ONLINE_USER', '10', null, 1, 0, 'apollo', to_date('12-09-2017 17:31:36', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:31:36', 'dd-mm-yyyy hh24:mi:ss'));
 
 
 -- Create table
@@ -843,25 +723,6 @@ alter table "Namespace"
     minextents 1
     maxextents unlimited
   );
-
-insert into "Namespace"  
-values (1, 'SampleApp', 'default', 'application', 0, 'default', to_date('11-09-2017 15:41:27', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:41:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Namespace"  
-values (2, 'system111', 'default', 'application', 0, 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:06:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Namespace"  
-values (3, '201709121725', 'default', 'application', 0, 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:26:43', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Namespace"  
-values (4, '201709121725', 'default', 'TEST2.CAB2B', 1, 'apollo', to_date('12-09-2017 17:27:12', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:29:27', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Namespace"  
-values (5, '201709121725', 'default', 'TEST2.CAB2B', 1, 'apollo', to_date('12-09-2017 17:29:54', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:30:18', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Namespace"  
-values (6, '201709121725', 'default', 'TEST2.CAB2B', 0, 'apollo', to_date('12-09-2017 17:30:40', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:30:40', 'dd-mm-yyyy hh24:mi:ss'));
-
 
 
 -- Create table
@@ -1001,21 +862,6 @@ alter table "Release"
     maxextents unlimited
   );
 
-insert into "Release" 
-values (1, '20161009155425-d3a0749c6e20bc15', '20161009155424-release', 'Sample发布', 'SampleApp', 'default', 'application', '{"timeout":"100"}', 0, 0, 'default', to_date('11-09-2017 15:41:28', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:41:28', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Release" 
-values (2, '20170912120827-7c90585eb25bef24', '20170912120820-release', null, 'system111', 'default', 'application', '{"SSO_LOGIN_URL":"http://10.21.159.41/cab2b/ssologin.action"}', 0, 0, 'apollo', to_date('12-09-2017 12:08:28', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:08:28', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Release" 
-values (3, '20170912160311-7c904aed2c293904', '20170912160149-release', null, 'system111', 'default', 'application', '{"SSO_LOGIN_URL":"http://10.21.159.41/cab2b/ssologin.action"}', 0, 0, 'apollo', to_date('12-09-2017 16:03:11', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 16:03:11', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Release" 
-values (4, '20170912172840-2e854aed2c293905', '20170912172719-release', null, '201709121725', 'default', 'application', '{}', 0, 0, 'apollo', to_date('12-09-2017 17:28:40', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:28:40', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "Release" 
-values (5, '20170912172845-349b4aed2c293906', '20170912172723-release', null, '201709121725', 'default', 'TEST2.CAB2B', '{}', 0, 1, 'apollo', to_date('12-09-2017 17:28:45', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:29:27', 'dd-mm-yyyy hh24:mi:ss'));
-
 
 -- Create table
 create table "ReleaseMessage"
@@ -1071,15 +917,6 @@ alter table "ReleaseMessage"
     minextents 1
     maxextents unlimited
   );
-
-insert into "ReleaseMessage" 
-values (2, 'system111+default+application', to_date('12-09-2017 16:03:11', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "ReleaseMessage" 
-values (3, '201709121725+default+application', to_date('12-09-2017 17:28:40', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into "ReleaseMessage" 
-values (4, '201709121725+default+TEST2.CAB2B', to_date('12-09-2017 17:28:45', 'dd-mm-yyyy hh24:mi:ss'));
 
 
 -- Create table
@@ -1158,21 +995,6 @@ alter table  "ReleaseHistory"
     minextents 1
     maxextents unlimited
   );
-
-insert into  "ReleaseHistory" 
-values (1, 'SampleApp', 'default', 'application', 'default', 1, 0, 0, '{}', 0, 'apollo', to_date('11-09-2017 15:41:28', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('11-09-2017 15:41:28', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into  "ReleaseHistory" 
-values (2, 'system111', 'default', 'application', 'default', 2, 0, 0, '{"isEmergencyPublish":false}', 0, 'apollo', to_date('12-09-2017 12:08:28', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 12:08:28', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into  "ReleaseHistory" 
-values (3, 'system111', 'default', 'application', 'default', 3, 2, 0, '{"isEmergencyPublish":false}', 0, 'apollo', to_date('12-09-2017 16:03:11', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 16:03:11', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into  "ReleaseHistory" 
-values (4, '201709121725', 'default', 'application', 'default', 4, 0, 0, '{"isEmergencyPublish":false}', 0, 'apollo', to_date('12-09-2017 17:28:40', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:28:40', 'dd-mm-yyyy hh24:mi:ss'));
-
-insert into  "ReleaseHistory" 
-values (5, '201709121725', 'default', 'TEST2.CAB2B', 'default', 5, 0, 0, '{"isEmergencyPublish":false}', 1, 'apollo', to_date('12-09-2017 17:28:45', 'dd-mm-yyyy hh24:mi:ss'), 'apollo', to_date('12-09-2017 17:29:27', 'dd-mm-yyyy hh24:mi:ss'));
 
 
 -- Create table
