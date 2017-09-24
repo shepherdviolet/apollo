@@ -3,7 +3,7 @@ SERVICE_NAME=apollo-portal
 ## Adjust log dir if necessary
 LOG_DIR=/opt/logs/100003173
 ## Adjust server port if necessary
-SERVER_PORT=8080
+SERVER_PORT=8070
 
 ## Adjust memory settings if necessary
 #export JAVA_OPTS="-Xms2560m -Xmx2560m -Xss256k -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=384m -XX:NewSize=1536m -XX:MaxNewSize=1536m -XX:SurvivorRatio=8"
@@ -16,7 +16,7 @@ export JAVA_OPTS="$JAVA_OPTS -XX:+UseParNewGC -XX:ParallelGCThreads=4 -XX:MaxTen
 export JAVA_OPTS="$JAVA_OPTS -Dserver.port=$SERVER_PORT -Dlogging.file=$LOG_DIR/$SERVICE_NAME.log -Xloggc:$LOG_DIR/heap_trace.txt -XX:HeapDumpPath=$LOG_DIR/HeapDumpOnOutOfMemoryError/"
 
 PATH_TO_JAR=$SERVICE_NAME".jar"
-SERVER_URL="http://localhost:$SERVER_PORT"
+SERVER_URL="http://172.26.120.45:$SERVER_PORT"
 
 if [ "$(uname)" == "Darwin" ]; then
     windows="0"

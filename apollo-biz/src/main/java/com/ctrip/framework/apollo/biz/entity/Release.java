@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Release")
 @SQLDelete(sql = "Update Release set isDeleted = 1 where id = ?")
-@Where(clause = "isDeleted = 0")
+@Where(clause = "\"IsDeleted\" = 0")
 public class Release extends BaseEntity {
   @Column(name = "ReleaseKey", nullable = false)
   private String releaseKey;
@@ -33,7 +33,7 @@ public class Release extends BaseEntity {
   @Column(name = "NamespaceName", nullable = false)
   private String namespaceName;
 
-  @Column(name = "Configurations", nullable = false)
+  @Column(name = "Configurations", columnDefinition = "CLOB NOT NULL")
   @Lob
   private String configurations;
 
