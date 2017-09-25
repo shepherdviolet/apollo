@@ -827,3 +827,14 @@ values (4, 'api.readTimeout', '10000', 'http接口read timeout', 0, 'default', t
 
 insert into "ServerConfig" 
 values (5, 'consumer.token.salt', 'someSalt', 'consumer token salt', 0, 'default', to_date('11-09-2017 15:36:47', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:36:47', 'dd-mm-yyyy hh24:mi:ss'));
+
+
+-- Create sequence 
+create sequence ID_SEQ
+minvalue 1
+maxvalue 9223372036854775807
+start with 1
+increment by 1
+cache 20
+cycle
+order;

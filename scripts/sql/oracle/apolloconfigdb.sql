@@ -1068,3 +1068,14 @@ insert into "ServerConfig" values (3, 'item.value.length.limit', 'default', '200
 insert into "ServerConfig" values (4, 'appnamespace.private.enable', 'default', 'false', '是否开启private namespace', 0, 'default', to_date('11-09-2017 15:41:26', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:41:26', 'dd-mm-yyyy hh24:mi:ss'));
 
 insert into "ServerConfig" values (5, 'item.key.length.limit', 'default', '128', 'item key 最大长度限制', 0, 'default', to_date('11-09-2017 15:41:26', 'dd-mm-yyyy hh24:mi:ss'), null, to_date('11-09-2017 15:41:26', 'dd-mm-yyyy hh24:mi:ss'));
+
+
+-- Create sequence 
+create sequence ID_SEQ
+minvalue 1
+maxvalue 9223372036854775807
+start with 1
+increment by 1
+cache 20
+cycle
+order;
