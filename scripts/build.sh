@@ -13,7 +13,7 @@ apollo_portal_db_username=ApolloPortalDB
 apollo_portal_db_password=1234
 
 # meta server url
-dev_meta=http://172.26.120.45:8080
+dev_meta=http://localhost:8080
 #fat_meta=http://localhost:8080
 #uat_meta=http://localhost:8080
 #pro_meta=http://localhost:8080
