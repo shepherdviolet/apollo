@@ -24,6 +24,32 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "App"
+  is '应用表';
+-- Add comments to the columns 
+comment on column "App"."Id"
+  is '主键';
+comment on column "App"."AppId"
+  is 'AppID';
+comment on column "App"."Name"
+  is '应用名';
+comment on column "App"."OrgId"
+  is '部门Id';
+comment on column "App"."OrgName"
+  is '部门名字';
+comment on column "App"."OwnerName"
+  is 'ownerName';
+comment on column "App"."OwnerEmail"
+  is 'ownerEmail';
+comment on column "App"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "App"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "App"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "App"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index AppId on "App" ("AppId")
   tablespace APOLLOPORTALDB_DAT
@@ -100,6 +126,28 @@ tablespace APOLLOCONFIGDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "AppNamespace"
+  is '应用namespace定义';
+-- Add comments to the columns 
+comment on column "AppNamespace"."Id"
+  is '主键';
+comment on column "AppNamespace"."Name"
+  is 'namespace名字，注意，需要全局唯一';
+comment on column "AppNamespace"."AppId"
+  is 'app id';
+comment on column "AppNamespace"."Format"
+  is 'namespace的format类型';
+comment on column "AppNamespace"."Comment"
+  is '注释';
+comment on column "AppNamespace"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "AppNamespace"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "AppNamespace"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "AppNamespace"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index DataChange_LastTime00000 on "AppNamespace" ("DataChange_LastTime")
   tablespace APOLLOCONFIGDB_DAT
@@ -177,6 +225,32 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "Consumer"
+  is '开放API消费者';
+-- Add comments to the columns 
+comment on column "Consumer"."Id"
+  is '主键';
+comment on column "Consumer"."AppId"
+  is 'AppID';
+comment on column "Consumer"."Name"
+  is '应用名';
+comment on column "Consumer"."OrgId"
+  is '部门Id';
+comment on column "Consumer"."OrgName"
+  is '部门名字';
+comment on column "Consumer"."OwnerName"
+  is 'ownerName';
+comment on column "Consumer"."OwnerEmail"
+  is 'ownerEmail';
+comment on column "Consumer"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "Consumer"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "Consumer"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "Consumer"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index AppId00000 on "Consumer" ("AppId")
   tablespace APOLLOPORTALDB_DAT
@@ -236,6 +310,22 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "ConsumerAudit"
+  is 'consumer审计表';
+-- Add comments to the columns 
+comment on column "ConsumerAudit"."Id"
+  is '主键';
+comment on column "ConsumerAudit"."ConsumerId"
+  is 'Consumer Id';
+comment on column "ConsumerAudit"."Uri"
+  is '访问的Uri';
+comment on column "ConsumerAudit"."Method"
+  is '访问的Method';
+comment on column "ConsumerAudit"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "ConsumerAudit"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index IX_ConsumerId on "ConsumerAudit" ("ConsumerId")
   tablespace APOLLOPORTALDB_DAT
@@ -297,6 +387,24 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "ConsumerRole"
+  is 'consumer和role的绑定表';
+-- Add comments to the columns 
+comment on column "ConsumerRole"."Id"
+  is '主键';
+comment on column "ConsumerRole"."ConsumerId"
+  is 'Consumer Id';
+comment on column "ConsumerRole"."RoleId"
+  is 'Role Id';
+comment on column "ConsumerRole"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "ConsumerRole"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "ConsumerRole"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "ConsumerRole"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index IX_ConsumerId_RoleId on "ConsumerRole" ("ConsumerId", "RoleId")
   tablespace APOLLOPORTALDB_DAT
@@ -370,6 +478,22 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "ConsumerToken"
+  is 'consumer token表';
+-- Add comments to the columns 
+comment on column "ConsumerToken"."Id"
+  is '主键';
+comment on column "ConsumerToken"."ConsumerId"
+  is 'Consumer Id';
+comment on column "ConsumerToken"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "ConsumerToken"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "ConsumerToken"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "ConsumerToken"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index DataChange_LastTime00002 on "ConsumerToken" ("DataChange_LastTime")
   tablespace APOLLOPORTALDB_DAT
@@ -432,6 +556,26 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "Favorite"
+  is '应用收藏表';
+-- Add comments to the columns 
+comment on column "Favorite"."Id"
+  is '主键';
+comment on column "Favorite"."UserId"
+  is '收藏的用户';
+comment on column "Favorite"."AppId"
+  is 'AppID';
+comment on column "Favorite"."Position"
+  is '收藏顺序';
+comment on column "Favorite"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "Favorite"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "Favorite"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "Favorite"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index AppId00001 on "Favorite" ("AppId")
   tablespace APOLLOPORTALDB_DAT
@@ -505,6 +649,24 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "Permission"
+  is 'permission表';
+-- Add comments to the columns 
+comment on column "Permission"."Id"
+  is '主键';
+comment on column "Permission"."PermissionType"
+  is '权限类型';
+comment on column "Permission"."TargetId"
+  is '权限对象类型';
+comment on column "Permission"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "Permission"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "Permission"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "Permission"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index IX_DataChange_LastTime00001 on "Permission" ("DataChange_LastTime")
   tablespace APOLLOPORTALDB_DAT
@@ -565,6 +727,22 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "Role"
+  is '角色表';
+-- Add comments to the columns 
+comment on column "Role"."Id"
+  is '主键';
+comment on column "Role"."RoleName"
+  is 'Role name';
+comment on column "Role"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "Role"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "Role"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "Role"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index IX_DataChange_LastTime00002 on "Role" ("DataChange_LastTime")
   tablespace APOLLOPORTALDB_DAT
@@ -627,6 +805,24 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "RolePermission"
+  is '角色和权限的绑定表';
+-- Add comments to the columns 
+comment on column "RolePermission"."Id"
+  is '主键';
+comment on column "RolePermission"."RoleId"
+  is 'Role Id';
+comment on column "RolePermission"."PermissionId"
+  is 'Permission Id';
+comment on column "RolePermission"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "RolePermission"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "RolePermission"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "RolePermission"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index IX_DataChange_LastTime00003 on "RolePermission" ("DataChange_LastTime")
   tablespace APOLLOPORTALDB_DAT
@@ -700,6 +896,24 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "UserRole"
+  is '用户和role的绑定表';
+-- Add comments to the columns 
+comment on column "UserRole"."Id"
+  is '主键';
+comment on column "UserRole"."UserId"
+  is '用户身份标识';
+comment on column "UserRole"."RoleId"
+  is 'Role Id';
+comment on column "UserRole"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "UserRole"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "UserRole"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "UserRole"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index IX_DataChange_LastTime00004 on "UserRole" ("DataChange_LastTime")
   tablespace APOLLOPORTALDB_DAT
@@ -774,6 +988,26 @@ tablespace APOLLOPORTALDB_DAT
     minextents 1
     maxextents unlimited
   );
+-- Add comments to the table 
+comment on table "ServerConfig"
+  is '配置服务自身配置';
+-- Add comments to the columns 
+comment on column "ServerConfig"."Id"
+  is '主键';
+comment on column "ServerConfig"."Key"
+  is '配置项Key';
+comment on column "ServerConfig"."Value"
+  is '配置项值';
+comment on column "ServerConfig"."Comment"
+  is '注释';
+comment on column "ServerConfig"."DataChange_CreatedBy"
+  is '创建人邮箱前缀';
+comment on column "ServerConfig"."DataChange_CreatedTime"
+  is '创建时间';
+comment on column "ServerConfig"."DataChange_LastModifiedBy"
+  is '最后修改人邮箱前缀';
+comment on column "ServerConfig"."DataChange_LastTime"
+  is '最后修改时间';
 -- Create/Recreate indexes 
 create index DataChange_LastTime00004 on "ServerConfig" ("DataChange_LastTime")
   tablespace APOLLOPORTALDB_DAT
@@ -833,7 +1067,7 @@ values (5, 'consumer.token.salt', 'someSalt', 'consumer token salt', 0, 'default
 create sequence ID_SEQ
 minvalue 1
 maxvalue 9223372036854775807
-start with 1
+start with 10
 increment by 1
 cache 20
 cycle
