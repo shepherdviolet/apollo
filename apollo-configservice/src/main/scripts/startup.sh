@@ -16,7 +16,7 @@ export JAVA_OPTS="$JAVA_OPTS -XX:+UseParNewGC -XX:ParallelGCThreads=4 -XX:MaxTen
 export JAVA_OPTS="$JAVA_OPTS -Dserver.port=$SERVER_PORT -Dlogging.file=$LOG_DIR/$SERVICE_NAME.log -Xloggc:$LOG_DIR/heap_trace.txt -XX:HeapDumpPath=$LOG_DIR/HeapDumpOnOutOfMemoryError/"
 
 PATH_TO_JAR=$SERVICE_NAME".jar"
-SERVER_URL="http://localhost:$SERVER_PORT"
+SERVER_URL="http://172.26.120.45:$SERVER_PORT"
 
 function checkPidAlive {
     for i in `ls -t $SERVICE_NAME*.pid 2>/dev/null`

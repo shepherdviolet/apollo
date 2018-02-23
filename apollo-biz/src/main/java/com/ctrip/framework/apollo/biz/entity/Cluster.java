@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Cluster")
 @SQLDelete(sql = "Update Cluster set isDeleted = 1 where id = ?")
-@Where(clause = "isDeleted = 0")
+@Where(clause = "\"IsDeleted\" = 0")
 public class Cluster extends BaseEntity implements Comparable<Cluster> {
 
   @Column(name = "Name", nullable = false)

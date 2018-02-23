@@ -7,6 +7,7 @@ import org.hibernate.annotations.Where;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 
 /**
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ReleaseHistory")
 @SQLDelete(sql = "Update ReleaseHistory set isDeleted = 1 where id = ?")
-@Where(clause = "isDeleted = 0")
+@Where(clause = "\"IsDeleted\" = 0")
 public class ReleaseHistory extends BaseEntity {
   @Column(name = "AppId", nullable = false)
   private String appId;
@@ -38,7 +39,8 @@ public class ReleaseHistory extends BaseEntity {
   @Column(name = "Operation")
   private int operation;
 
-  @Column(name = "OperationContext", nullable = false)
+  @Column(name = "OperationContext", columnDefinition = "CLOB NOT NULL")
+  @Lob
   private String operationContext;
 
   public String getAppId() {
