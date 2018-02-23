@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
 
+	<repositories>
+		<repository>
+			<id>jcenter</id>
+			<name>jcenter</name>
+			<layout>default</layout>
+			<url>http://jcenter.bintray.com/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>maven-central</id>
+			<name>maven-central</name>
+			<layout>default</layout>
+			<url>https://repo1.maven.org/maven2/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ctrip.framework.apollo</groupId>
 	<artifactId>apollo</artifactId>
 	<version>0.9.1</version>
@@ -266,7 +287,7 @@
 			<dependency>
 				<groupId>com.oracle</groupId>
 				<artifactId>ojdbc6</artifactId>
-				<version>11.2.0.1.0</version>
+				<version>11.2.0.3</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.inject</groupId>
