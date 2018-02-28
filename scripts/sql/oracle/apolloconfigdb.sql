@@ -1405,8 +1405,39 @@ insert into "ServerConfig" values (5, 'item.key.length.limit', 'default', '128',
 create sequence ID_SEQ
 minvalue 1
 maxvalue 9223372036854775807
-start with 10
+start with 100
 increment by 1
 cache 20
 cycle
 order;
+
+-- Sample data
+
+INSERT INTO "App" ("Id", "AppId", "Name", "OrgId", "OrgName", "OwnerName", "OwnerEmail", "DataChange_CreatedTime")
+VALUES
+	(6, 'SampleApp', 'Sample App', 'TEST1', '样例部门1', 'apollo', 'apollo@acme.com', sysdate);
+
+INSERT INTO "AppNamespace" ("Id", "Name", "AppId", "Format", "IsPublic", "Comment", "DataChange_CreatedTime")
+VALUES
+	(7, 'application', 'SampleApp', 'properties', 0, 'default app namespace', sysdate);
+
+INSERT INTO "Cluster" ("Id", "Name", "AppId", "DataChange_CreatedTime")
+VALUES
+	(8, 'default', 'SampleApp', sysdate);
+
+INSERT INTO "Namespace" ("Id", "AppId", "ClusterName", "NamespaceName", "DataChange_CreatedTime")
+VALUES
+	(9, 'SampleApp', 'default', 'application', sysdate);
+
+
+INSERT INTO "Item" ("Id", "NamespaceId", "Key", "Value", "Comment", "LineNum", "DataChange_CreatedTime")
+VALUES
+	(10, 1, 'timeout', '100', 'sample timeout配置', 1, sysdate);
+
+INSERT INTO "Release" ("Id", "ReleaseKey", "Name", "Comment", "AppId", "ClusterName", "NamespaceName", "Configurations", "DataChange_CreatedTime")
+VALUES
+	(11, '20161009155425-d3a0749c6e20bc15', '20161009155424-release', 'Sample发布', 'SampleApp', 'default', 'application', '{\"timeout\":\"100\"}', sysdate);
+
+INSERT INTO "ReleaseHistory" ("Id", "AppId", "ClusterName", "NamespaceName", "BranchName", "ReleaseId", "PreviousReleaseId", "Operation", "OperationContext", "DataChange_CreatedBy", "DataChange_LastModifiedBy", "DataChange_CreatedTime")
+VALUES
+  (12, 'SampleApp', 'default', 'application', 'default', 1, 0, 0, '{}', 'apollo', 'apollo', sysdate);

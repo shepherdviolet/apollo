@@ -1067,8 +1067,70 @@ values (5, 'consumer.token.salt', 'someSalt', 'consumer token salt', 0, 'default
 create sequence ID_SEQ
 minvalue 1
 maxvalue 9223372036854775807
-start with 10
+start with 100
 increment by 1
 cache 20
 cycle
 order;
+
+-- Sample Data
+
+INSERT INTO "App" ("Id", "AppId", "Name", "OrgId", "OrgName", "OwnerName", "OwnerEmail", "DataChange_CreatedTime")
+VALUES
+	(6, 'SampleApp', 'Sample App', 'TEST1', '样例部门1', 'apollo', 'apollo@acme.com', sysdate);
+
+INSERT INTO "AppNamespace" ("Id", "Name", "AppId", "Format", "IsPublic", "Comment", "DataChange_CreatedTime")
+VALUES
+	(7, 'application', 'SampleApp', 'properties', 0, 'default app namespace', sysdate);
+
+INSERT INTO "Permission" ("Id", "PermissionType", "TargetId", "DataChange_CreatedTime")
+VALUES
+	(8, 'CreateCluster', 'SampleApp', sysdate);
+INSERT INTO "Permission" ("Id", "PermissionType", "TargetId", "DataChange_CreatedTime")
+VALUES
+	(9, 'CreateNamespace', 'SampleApp', sysdate);
+INSERT INTO "Permission" ("Id", "PermissionType", "TargetId", "DataChange_CreatedTime")
+VALUES
+	(10, 'AssignRole', 'SampleApp', sysdate);
+INSERT INTO "Permission" ("Id", "PermissionType", "TargetId", "DataChange_CreatedTime")
+VALUES
+	(11, 'ModifyNamespace', 'SampleApp+application', sysdate);
+INSERT INTO "Permission" ("Id", "PermissionType", "TargetId", "DataChange_CreatedTime")
+VALUES
+	(12, 'ReleaseNamespace', 'SampleApp+application', sysdate);
+
+INSERT INTO "Role" ("Id", "RoleName", "DataChange_CreatedTime")
+VALUES
+	(13, 'Master+SampleApp', sysdate);
+INSERT INTO "Role" ("Id", "RoleName", "DataChange_CreatedTime")
+VALUES
+	(14, 'ModifyNamespace+SampleApp+application', sysdate);
+INSERT INTO "Role" ("Id", "RoleName", "DataChange_CreatedTime")
+VALUES
+	(15, 'ReleaseNamespace+SampleApp+application', sysdate);
+
+INSERT INTO "RolePermission" ("Id", "RoleId", "PermissionId", "DataChange_CreatedTime")
+VALUES
+	(16, 13, 8, sysdate);
+INSERT INTO "RolePermission" ("Id", "RoleId", "PermissionId", "DataChange_CreatedTime")
+VALUES
+	(17, 13, 9, sysdate);
+INSERT INTO "RolePermission" ("Id", "RoleId", "PermissionId", "DataChange_CreatedTime")
+VALUES
+	(18, 13, 10, sysdate);
+INSERT INTO "RolePermission" ("Id", "RoleId", "PermissionId", "DataChange_CreatedTime")
+VALUES
+	(19, 14, 11, sysdate);
+INSERT INTO "RolePermission" ("Id", "RoleId", "PermissionId", "DataChange_CreatedTime")
+VALUES
+	(20, 15, 12, sysdate);
+
+INSERT INTO "UserRole" ("Id", "UserId", "RoleId", "DataChange_CreatedTime")
+VALUES
+	(21, 'apollo', 1, sysdate);
+INSERT INTO "UserRole" ("Id", "UserId", "RoleId", "DataChange_CreatedTime")
+VALUES
+	(22, 'apollo', 2, sysdate);
+INSERT INTO "UserRole" ("Id", "UserId", "RoleId", "DataChange_CreatedTime")
+VALUES
+	(23, 'apollo', 3, sysdate);
