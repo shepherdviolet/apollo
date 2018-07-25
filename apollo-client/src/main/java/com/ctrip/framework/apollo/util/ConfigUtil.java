@@ -1,5 +1,6 @@
 package com.ctrip.framework.apollo.util;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.slf4j.Logger;
@@ -206,7 +207,21 @@ public class ConfigUtil {
   }
 
   public String getDefaultLocalCacheDir() {
-    String cacheRoot = isOSWindows() ? "C:\\opt\\data\\%s" : "/opt/data/%s";
+    /*
+     * 允许设置本地缓存路径
+     * @author S.Violet
+     */
+    String prop = System.getProperty("meta_cache", null);
+    String cacheRoot;
+    if (prop != null && prop.length() > 0) {
+      if (!prop.endsWith(File.separator)) {
+        prop = prop + File.separator;
+      }
+      cacheRoot = prop + "data" + File.separator + "%s";
+    } else {
+      cacheRoot = isOSWindows() ? "C:\\opt\\data\\%s" : "/opt/data/%s";
+    }
+    logger.info("Apollo local cache dir:" + cacheRoot);
     return String.format(cacheRoot, getAppId());
   }
 

@@ -15,7 +15,8 @@ import com.ctrip.framework.foundation.spi.provider.Provider;
 
 public class DefaultApplicationProvider implements ApplicationProvider {
   private static final Logger logger = LoggerFactory.getLogger(DefaultApplicationProvider.class);
-  public static final String APP_PROPERTIES_CLASSPATH = "/META-INF/app.properties";
+  public static final String APP_PROPERTIES_CLASSPATH_1 = "/META-INF/app.properties";
+  public static final String APP_PROPERTIES_CLASSPATH_2 = "/META-INF/config/app.properties";
   private Properties m_appProperties = new Properties();
 
   private String m_appId;
@@ -23,14 +24,24 @@ public class DefaultApplicationProvider implements ApplicationProvider {
   @Override
   public void initialize() {
     try {
-      InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(APP_PROPERTIES_CLASSPATH);
+      InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(APP_PROPERTIES_CLASSPATH_1);
       if (in == null) {
-        in = DefaultApplicationProvider.class.getResourceAsStream(APP_PROPERTIES_CLASSPATH);
+        in = DefaultApplicationProvider.class.getResourceAsStream(APP_PROPERTIES_CLASSPATH_1);
       }
 
       if (in == null) {
-        logger.warn("{} not found from classpath!", APP_PROPERTIES_CLASSPATH);
+        logger.warn("{} not found from classpath!", APP_PROPERTIES_CLASSPATH_1);
+
+        in = Thread.currentThread().getContextClassLoader().getResourceAsStream(APP_PROPERTIES_CLASSPATH_2);
+        if (in == null) {
+          in = DefaultApplicationProvider.class.getResourceAsStream(APP_PROPERTIES_CLASSPATH_2);
+        }
+
+        if (in == null) {
+          logger.warn("{} not found from classpath!", APP_PROPERTIES_CLASSPATH_2);
+        }
       }
+
       initialize(in);
     } catch (Throwable ex) {
       logger.error("Initialize DefaultApplicationProvider failed.", ex);
@@ -93,12 +104,12 @@ public class DefaultApplicationProvider implements ApplicationProvider {
     m_appId = m_appProperties.getProperty("app.id");
     if (!Utils.isBlank(m_appId)) {
       m_appId = m_appId.trim();
-      logger.info("App ID is set to {} by app.id property from {}", m_appId, APP_PROPERTIES_CLASSPATH);
+      logger.info("App ID is set to {} by app.id property from {}", m_appId, APP_PROPERTIES_CLASSPATH_1);
       return;
     }
 
     m_appId = null;
-    logger.warn("app.id is not available from System Property and {}. It is set to null", APP_PROPERTIES_CLASSPATH);
+    logger.warn("app.id is not available from System Property and {}. It is set to null", APP_PROPERTIES_CLASSPATH_1);
   }
 
   @Override

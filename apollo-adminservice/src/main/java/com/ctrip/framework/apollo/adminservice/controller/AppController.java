@@ -12,6 +12,7 @@ import com.ctrip.framework.apollo.core.utils.StringUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +32,7 @@ public class AppController {
   @Autowired
   private AdminService adminService;
 
+  @PreAuthorize(value = "@permissionValidator.isSuperAdmin()")
   @RequestMapping(path = "/apps", method = RequestMethod.POST)
   public AppDTO create(@RequestBody AppDTO dto) {
     if (!InputValidator.isValidClusterNamespace(dto.getAppId())) {
