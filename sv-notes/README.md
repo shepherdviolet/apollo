@@ -169,6 +169,7 @@ public class TestJavaConfigBean {
 > 当配置变化时, 调用LoadBalancedHostManager.setHosts()方法设置新的后端地址. <br>
 
 ```text
+@Component
 public class TestApolloAnnotationBean {
   @ApolloConfig
   private Config config; //inject config for namespace application
