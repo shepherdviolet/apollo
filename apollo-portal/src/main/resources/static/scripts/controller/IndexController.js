@@ -1,8 +1,8 @@
 index_module.controller('IndexController', ['$scope', '$window', 'toastr', 'AppUtil', 'AppService',
-                                            'UserService', 'FavoriteService',
+                                            'UserService', 'FavoriteService', 'PermissionService',
                                             IndexController]);
 
-function IndexController($scope, $window, toastr, AppUtil, AppService, UserService, FavoriteService) {
+function IndexController($scope, $window, toastr, AppUtil, AppService, UserService, FavoriteService, PermissionService) {
 
     $scope.userId = '';
 
@@ -14,6 +14,10 @@ function IndexController($scope, $window, toastr, AppUtil, AppService, UserServi
     $scope.toggleOperationBtn = toggleOperationBtn;
     $scope.toTop = toTop;
     $scope.deleteFavorite = deleteFavorite;
+
+    PermissionService.has_root_permission().then(function (result) {
+        $scope.hasRootPermission = result.hasPermission;
+    });
 
     UserService.load_user().then(function (result) {
         $scope.userId = result.userId;
