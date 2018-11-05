@@ -39,7 +39,7 @@
 * 提取`apollo-configservice/target/apollo-configservice-x.x.x-github.zip`
 * 提取`apollo-adminservice/target/apollo-adminservice-x.x.x-github.zip`
 * 提取`apollo-portal/target/apollo-portal-x.x.x-github.zip`
-* 上传服务器, 解压
+* 上传服务器, 解压 (下面的配置必须在Linux上修改)
 * 修改`script/startup.sh`中的配置(日志路径/启动参数等)
 * 修改`config/application-github.properties`中的配置(数据库连接)
 * 修改`config/apollo-env.properties`中的配置(MetaServer地址)
