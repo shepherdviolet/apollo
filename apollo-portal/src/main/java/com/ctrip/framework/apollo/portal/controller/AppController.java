@@ -87,7 +87,6 @@ public class AppController {
     return appService.findByAppIds(appIds, page);
   }
 
-  @PreAuthorize(value = "@permissionValidator.isSuperAdmin()")
   @RequestMapping(value = "", method = RequestMethod.POST)
   public App create(@RequestBody AppModel appModel) {
 
